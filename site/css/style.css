@@ -187,3 +187,20 @@ th { background: var(--soft); }
   .nav-inner a { padding: 0.35rem 0.65rem; font-size: 0.85rem; }
   h1 { font-size: 1.4rem; }
 }
+
+@media print {
+  header, nav, footer, .btn, #print-checklist, .skip-link {
+    display: none !important;
+  }
+  main { max-width: 100%; padding: 0; }
+  .card {
+    border: none;
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+  body { background: #fff; color: #000; }
+  a { text-decoration: none; color: #000; }
+  h2 { color: #000; }
+  .rule { background: #fff; border: 1px solid #000; }
+  .checklist li::before { content: "☐ "; }
+}
